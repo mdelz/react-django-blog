@@ -1,0 +1,25 @@
+@import "../overrides.scss";
+
+.Post {
+  background-color: $gray-200;
+  border-radius: 0.25em;
+}
+
+.card {
+  font-size: $small-font-size;
+}
+
+.PostPrevies {
+  font-size: $small-font-size;
+
+  div.card-img {
+    overflow-x: hidden !important;
+  }
+
+  .card-img {
+    img {
+      width: auto;
+      height: 100%;
+    }
+  }
+}

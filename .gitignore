@@ -1,0 +1,4 @@
+# local database
+db.sqlite3
+
+**/media/*
