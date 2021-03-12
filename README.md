@@ -28,6 +28,9 @@ cd backend
 # run migrations
 python manage.py migrate
 
+# In case you want to use the Django admin backend
+python manage.py createsuperuser
+
 # start django
 python manage.py runserver
 ```

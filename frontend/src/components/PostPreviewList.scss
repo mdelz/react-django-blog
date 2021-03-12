@@ -1,0 +1,93 @@
+@import "../overrides.scss";
+
+.PostPreviews {
+  font-size: 1rem;
+  color: $black;
+
+  .badge {
+    color: $light;
+    margin-right: 0.5em;
+  }
+
+  .card {
+    background-color: $light;
+
+    a {
+      color: $black;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .card-body {
+      $card-line-height: 1.35em;
+      overflow: hidden !important;
+      height: 100%;
+
+      .card-title {
+        font-size: 1.5em;
+        line-height: $card-line-height;
+        max-height: 2 * $card-line-height;
+        overflow: hidden;
+        color: $primary;
+      }
+
+      .card-meta {
+        .post-date {
+          color: $mute;
+        }
+      }
+
+      .card-text {
+        text-align: justify;
+        line-height: $card-line-height;
+        height: 4 * $card-line-height; // 4 lines
+        overflow: hidden;
+      }
+    }
+
+    &:hover {
+      border-color: $highlight;
+    }
+
+    &.card-premium {
+      font-size: 1.2em;
+      overflow: hidden !important;
+      height: 384px;
+
+      img {
+        height: auto;
+        width: 100%;
+      }
+      .card-img-overlay {
+        padding: 0;
+        padding-left: 2rem;
+
+        .card-body {
+          max-width: 50%;
+          background-color: rgba($white, 0.6);
+          backdrop-filter: blur(5px);
+        }
+      }
+    }
+
+    &.card-common {
+      font-size: 0.9rem;
+      height: 200px;
+
+      .card-img {
+        overflow: hidden !important;
+        display: flex;
+
+        img {
+          max-width: 200px;
+          max-height: 200px;
+          width: auto;
+          height: auto;
+          align-self: center;
+        }
+      }
+    }
+  }
+}
