@@ -1,5 +1,6 @@
-@import "./overrides.scss";
+@import "overrides";
 
 .nav {
   background-color: $gray-200;
+  z-index: $zindex-fixed;
 }

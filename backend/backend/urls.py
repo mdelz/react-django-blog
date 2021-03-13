@@ -18,13 +18,17 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include, re_path
 from rest_framework import routers
-from blog import views
+from rest_framework_jwt.views import obtain_jwt_token
+from blog.views import post
 
-router = routers.DefaultRouter()
-router.register(r'posts', views.PostView, 'post')
+router = routers.SimpleRouter()
+router.register(r"posts", post.PostView, "post")
+
+print(router.urls)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
-    re_path(r'^markdownx/', include('markdownx.urls')),
+    path("admin/", admin.site.urls),
+    path("api/v1/", include(router.urls)),
+    path("auth/", obtain_jwt_token),
+    re_path(r"^markdownx/", include("markdownx.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

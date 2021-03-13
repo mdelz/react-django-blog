@@ -9,6 +9,10 @@ pillow = "*"
 django-markdownx = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
+djangorestframework-jwt = "*"
+django-filter = "*"
+pre-commit = "*"
+black = "*"
 
 [dev-packages]
 

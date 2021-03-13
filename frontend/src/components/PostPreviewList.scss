@@ -1,0 +1,125 @@
+@import "../overrides.scss";
+
+.PostPreviews {
+  font-size: 1rem;
+  color: $black;
+
+  .badge {
+    color: $light;
+    margin-right: 0.5em;
+  }
+
+  .card {
+    background-color: $light;
+
+    a {
+      color: $black;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .card-body {
+      $card-line-height: 1.35em;
+      overflow: hidden !important;
+      height: 100%;
+
+      .card-title {
+        font-size: 1.5em;
+        line-height: $card-line-height;
+        max-height: 2 * $card-line-height;
+        overflow: hidden;
+        color: $primary;
+      }
+
+      .card-meta {
+        .post-date {
+          color: $mute;
+        }
+      }
+
+      .card-text {
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-align: justify;
+      }
+    }
+
+    &:hover {
+      border-color: $highlight;
+    }
+
+    &.card-premium {
+      font-size: 1.2em;
+      overflow: hidden !important;
+      height: 384px;
+
+      img {
+        height: auto;
+        width: 100%;
+      }
+      .card-img-overlay {
+        $card-line-height: 1.35em;
+        padding: 0;
+        padding-left: 2rem;
+
+        .card-body {
+          max-width: 50%;
+          background-color: rgba($white, 0.6);
+          backdrop-filter: blur(5px);
+
+          .card-text {
+            -webkit-line-clamp: 10;
+          }
+        }
+      }
+    }
+
+    $card-common-height: 200px;
+    &.card-common {
+      font-size: 0.9rem;
+      height: $card-common-height;
+
+      .card-img {
+        overflow: hidden !important;
+        display: flex;
+        height: $card-common-height;
+
+        img {
+          max-width: $card-common-height;
+          max-height: $card-common-height;
+          width: auto;
+          height: auto;
+          align-self: center;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-between(xs, sm) {
+  .card-premium {
+    .card-body {
+      max-width: 85% !important;
+    }
+  }
+}
+
+@include media-breakpoint-only(md) {
+  .card-premium {
+    .card-body {
+      max-width: 70% !important;
+    }
+  }
+}
+
+@include media-breakpoint-only(lg) {
+  .card-premium {
+    .card-body {
+      max-width: 60% !important;
+    }
+  }
+}
