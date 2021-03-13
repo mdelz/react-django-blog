@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 export default function Tag(props) {
-  return <span class="badge bg-secondary">{props.key}</span>;
+  return <span class="badge bg-secondary">{props.label}</span>;
 }
 
 Tag.propTypes = {

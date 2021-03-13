@@ -9,7 +9,7 @@ function PostPreviewContent(props) {
   return (
     <div className={"card-body " + props.className}>
       <div className="card-meta">
-        {props.post.tags.map((tag, i) => (i < 4 ? <Tag key={tag} /> : null))}
+        {props.post.tags.map((tag, i) => (i < 4 ? <Tag label={tag} /> : null))}
         <small className="post-date float-right">
           {props.post.publish_date}
         </small>
@@ -30,17 +30,17 @@ PostPreviewContent.defaultProps = {
 
 function PostPreview(props) {
   return (
-    <div className="col-6 p-3">
+    <div className="col-12 col-xl-6 p-3">
       <div className="card card-common">
         <Link href={"/posts/" + props.post.slug}>
           <a className="stretched-link">
             <div className="row no-gutters">
-              <div className="card-img col-4">
+              <div className="card-img col-xl-4 col-sm-4 col-lg-2 col-3">
                 <img src={props.post.thumbnail} alt="Thumbnail image" />
               </div>
               <PostPreviewContent
                 post={props.post}
-                className="position-static col-8 p-3"
+                className="position-static col-xl-8 col-sm-8 col-lg-10 col-9 p-3"
               />
             </div>
           </a>
@@ -92,7 +92,7 @@ class PostPreviewList extends Component {
 
   render() {
     return (
-      <div className="container-fluid m-3 PostPreviews">
+      <div className="mt-3 PostPreviews">
         <div className="row">
           {this.state.posts.map((post, i) =>
             i > 0 ? (

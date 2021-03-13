@@ -34,15 +34,26 @@ $gray-200: #343a40;
 $gray-100: #212529;
 $white: #000;
 
-$light: $gray-100;
+$light: $gray-200;
 $dark: $gray-800;
+$mute: $gray-400;
 
 $primary: $color-primary-0;
 $secondary: $color-primary-1;
 $highlight: $color-complement-0;
-$mute: $gray-400;
 $info: #007bff; // $blue
-$body-bg: $light;
+
+// $theme-colors: (
+//   "light": $light,
+//   "dark": $dark,
+//   "primary": $primary,
+//   "secondary": $secondary,
+//   "highlight": $highlight,
+//   "info": $info,
+//   "mute": $mute,
+// );
+
+$body-bg: $gray-100;
 $body-color: $gray-900;
 
 @import "bootstrap/scss/bootstrap.scss";

@@ -68,7 +68,7 @@ class Post extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      post: props.post,
+      post: null,
     };
   }
 
@@ -79,6 +79,7 @@ class Post extends Component {
   }
 
   loadPost = (slug) => {
+    this.setState({ post: null });
     axios
       .get("/api/v1/posts/" + slug)
       .then((res) => this.setState({ post: res.data }))

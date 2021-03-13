@@ -6,46 +6,63 @@ import "./App.scss";
 
 function Navigation(props) {
   return (
-    <ul className="nav justify-content-start">
-      <li class="nav-item">
-        <Link href="/">
-          <a class="nav-link">News</a>
-        </Link>
-      </li>
-      <li class="nav-item">
-        <Link href="/categories">
-          <a class="nav-link">Categories</a>
-        </Link>
-      </li>
-      <li class="nav-item">
-        <Link href="/about">
-          <a class="nav-link">About</a>
-        </Link>
-      </li>
-      <li class="nav-item">
-        <Link href="/posts/example">
-          <a class="nav-link">Example</a>
-        </Link>
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link disabled"
-          href="#"
-          tabindex="-1"
-          aria-disabled="true"
-        >
-          Login
-        </a>
-      </li>
-    </ul>
+    <nav class="navbar navbar-expand-xl navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        Blog Name
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="nav justify-content-start">
+          <li class="nav-item">
+            <Link href="/">
+              <a class="nav-link">News</a>
+            </Link>
+          </li>
+          <li class="nav-item">
+            <Link href="/categories">
+              <a class="nav-link">Categories</a>
+            </Link>
+          </li>
+          <li class="nav-item">
+            <Link href="/about">
+              <a class="nav-link">About</a>
+            </Link>
+          </li>
+          <li class="nav-item">
+            <Link href="/posts/example">
+              <a class="nav-link">Example</a>
+            </Link>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link disabled"
+              href="#"
+              tabindex="-1"
+              aria-disabled="true"
+            >
+              Login
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   );
 }
 
 function Content(props) {
   return (
-    <div className="row">
-      <div className="col-sm-6 col-md-2"></div>
-      <div className="col-sm-12 col-md-8">
+    <div className="container">
+      <div className="row">
         <Switch>
           <Route path="/about">
             <div>
@@ -53,14 +70,13 @@ function Content(props) {
             </div>
           </Route>
           <Route path="/posts/:slug">
-            {(params) => <Post slug={params.slug} />}
+            {(params) => <Post slug={params.slug} key={params.slug} />}
           </Route>
           <Route path="/">
             <PostPreviewList />
           </Route>
         </Switch>
       </div>
-      <div className="col-sm-6 col-md-2"></div>
     </div>
   );
 }
@@ -69,9 +85,7 @@ function App() {
   return (
     <div>
       <Navigation />
-      <div className="container-fluid">
-        <Content />
-      </div>
+      <Content />
     </div>
   );
 }
